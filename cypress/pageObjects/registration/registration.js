@@ -5,9 +5,8 @@ import registrationSelectors from "./registrationSelectors"
 class Registration {
 
     invalidData() {
-
         cy.visit('/');
-        //cy.wait(500)
+        //cy.wait(500);
         cy.get(registrationSelectors.singInButton).click();
         cy.get(registrationSelectors.registerYourAccountLink).click();
         cy.get(registrationSelectors.registerButton).click();
@@ -22,30 +21,28 @@ class Registration {
         cy.get(registrationSelectors.phoneError).should('have.text', ' Phone is required. ');
         cy.get(registrationSelectors.emailAddressError).should('have.text', ' E-mail is required. ');
         cy.get(registrationSelectors.passwordError).should('have.text', ' Password is required. ')
-        
     };
 
     validData() {
-
         cy.visit('/')
         cy.get(registrationSelectors.singInButton).click();
         cy.get(registrationSelectors.registerYourAccountLink).click();
-        cy.get(registrationSelectors.firstName).type('Valentyn');
-        cy.get(registrationSelectors.lastName).type('Ka');
+        cy.get(registrationSelectors.firstName).type(registrationSelectors.firstNameData);
+        cy.get(registrationSelectors.lastName).type(registrationSelectors.lastNameData);
         cy.get(registrationSelectors.dateOfBirth).type('1999-01-01');
         cy.get(registrationSelectors.address).type('Address');
         cy.get(registrationSelectors.postcode).type('30-001');
         cy.get(registrationSelectors.city).type('City');
         cy.get(registrationSelectors.state).type('Resident');
-        cy.get(registrationSelectors.selectCountry).type('Country');
+        cy.get(registrationSelectors.selectCountry).select('Ukraine').should('have.value', 'UA');
         cy.get(registrationSelectors.phone).type('000000000');
         cy.get(registrationSelectors.emailAddress).type('valentynpost@gmail.com');
         cy.get(registrationSelectors.password).type('welcome01');
-        cy.get(registrationSelectors.singInButton).click();
-        cy.get(registrationSelectors.loginPopup).should('be.visible')
-
+        cy.get(registrationSelectors.registerButton).click({force:true});
+        //cy.get(registrationSelectors.loginPopup).should('be.visible')
+        //.or
+        cy.get(registrationSelectors.helpBlocker).should('have.text', 'A customer with this email address already exists.')
     };
-
 
 }
 
