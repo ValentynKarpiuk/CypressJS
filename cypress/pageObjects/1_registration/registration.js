@@ -21,7 +21,13 @@ class Registration {
         cy.get(registrationSelectors.phoneError).should('have.text', ' Phone is required. ');
         cy.get(registrationSelectors.emailAddressError).should('have.text', ' E-mail is required. ');
         cy.get(registrationSelectors.passwordError).should('have.text', ' Password is required. ')
-    };
+        cy.get(registrationSelectors.phone).type('a');
+        cy.get(registrationSelectors.phoneError).should('have.text', ' Only numbers are allowed. ');
+        cy.get(registrationSelectors.emailAddress).type('valentynpost.gmail.com');
+        cy.get(registrationSelectors.emailAddressError).should('have.text', ' E-mail format is invalid. ');
+        cy.get(registrationSelectors.password).type('01234');
+        cy.get(registrationSelectors.passwordError).should('have.text', ' Password must be minimal 6 characters long. ')
+    }
 
     validData() {
         cy.visit('/')
@@ -39,10 +45,10 @@ class Registration {
         cy.get(registrationSelectors.emailAddress).type('valentynpost@gmail.com');
         cy.get(registrationSelectors.password).type('welcome01');
         cy.get(registrationSelectors.registerButton).click({force:true});
-        //cy.get(registrationSelectors.loginPopup).should('be.visible')
-        //.or
-        cy.get(registrationSelectors.helpBlocker).should('have.text', 'A customer with this email address already exists.')
-    };
+        cy.get(registrationSelectors.loginPopup).should('be.visible')
+        //or
+        //cy.get(registrationSelectors.helpBlocker).should('have.text', 'A customer with this email address already exists.')
+    }
 
 }
 

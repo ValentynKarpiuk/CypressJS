@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 
 import loginSelectors from "./loginSelectors";
-import registrationSelectors from "../registration/registrationSelectors";
+import registrationSelectors from "../1_registration/registrationSelectors";
 
 class Login {
 

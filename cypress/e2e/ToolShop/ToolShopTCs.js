@@ -1,7 +1,8 @@
 /// <reference types="cypress" />
 
-import { registration } from "../../pageObjects/registration/registration"
-import { login } from "../../pageObjects/login/login";  
+import { registration } from "../../pageObjects/1_registration/registration"
+import { login } from "../../pageObjects/2_login/login";  
+import { passwordRecovery } from "../../pageObjects/3_passwordRecover/passwordRecover";
 
 describe('Registration', () => {
 
@@ -35,6 +36,26 @@ describe('Authorization', () => {
 
     it('Login to the page with incorrect format of email and incorrect length of the password', () => {
         login.incorrectEmail();
+    })
+
+})
+
+describe('User forgot Password', () => {
+
+    // This TC is working fine but it locked because after execution
+    // user is not able to log in with data set during
+    // successful registration
+    
+    /*it('Password successfully recovered', () => {
+        passwordRecovery.validData();
+    })*/
+
+    it('No exist in the system email address was set', () => {
+        passwordRecovery.invalidData();
+    })
+
+    it('Incorrect email format was set', () => {
+        passwordRecovery.invalidFormat();
     })
 
 })
