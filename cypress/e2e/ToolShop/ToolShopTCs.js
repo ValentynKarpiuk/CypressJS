@@ -3,6 +3,7 @@
 import { registration } from "../../pageObjects/1_registration/registration"
 import { login } from "../../pageObjects/2_login/login";  
 import { passwordRecovery } from "../../pageObjects/3_passwordRecover/passwordRecover";
+import { userMenu } from "../../pageObjects/4_userMenu/userMenu";
 
 describe('Registration', () => {
 
@@ -57,5 +58,21 @@ describe('User forgot Password', () => {
     it('Incorrect email format was set', () => {
         passwordRecovery.invalidFormat();
     })
+
+})
+
+describe('User menu', () => {
+
+    beforeEach(() => {
+        login.correctCredential();
+    })
+
+    it('Update prfile, all data apart from email', () => {
+        userMenu.editProfileData();
+    })
+
+    /*afterEach(() => {
+        login.singOut();
+    })*/
 
 })

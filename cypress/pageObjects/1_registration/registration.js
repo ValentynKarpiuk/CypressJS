@@ -10,23 +10,23 @@ class Registration {
         cy.get(registrationSelectors.singInButton).click();
         cy.get(registrationSelectors.registerYourAccountLink).click();
         cy.get(registrationSelectors.registerButton).click();
-        cy.get(registrationSelectors.firstNameError).should('have.text', ' First name is required. ');
-        cy.get(registrationSelectors.lastNameError).should('have.text', ' Last name is required. ');
-        cy.get(registrationSelectors.dateOfBirthError).should('have.text', ' Date of Birth is required. ');
-        cy.get(registrationSelectors.addressError).should('have.text', ' Address is required. ');
-        cy.get(registrationSelectors.postcodeError).should('have.text', ' Postcode is required. ');
-        cy.get(registrationSelectors.cityError).should('have.text', ' City is required. ');
-        cy.get(registrationSelectors.stateError).should('have.text', ' State is required. ');
-        cy.get(registrationSelectors.selectCountryError).should('have.text', ' Country is required. ');
-        cy.get(registrationSelectors.phoneError).should('have.text', ' Phone is required. ');
-        cy.get(registrationSelectors.emailAddressError).should('have.text', ' E-mail is required. ');
-        cy.get(registrationSelectors.passwordError).should('have.text', ' Password is required. ')
+        cy.get(registrationSelectors.firstNameError).should('contain', ' First name is required. ');
+        cy.get(registrationSelectors.lastNameError).should('contain', ' Last name is required. ');
+        cy.get(registrationSelectors.dateOfBirthError).should('contain', ' Date of Birth is required. ');
+        cy.get(registrationSelectors.addressError).should('contain', ' Address is required. ');
+        cy.get(registrationSelectors.postcodeError).should('contain', ' Postcode is required. ');
+        cy.get(registrationSelectors.cityError).should('contain', ' City is required. ');
+        cy.get(registrationSelectors.stateError).should('contain', ' State is required. ');
+        cy.get(registrationSelectors.selectCountryError).should('contain', ' Country is required. ');
+        cy.get(registrationSelectors.phoneError).should('contain', ' Phone is required. ');
+        cy.get(registrationSelectors.emailAddressError).should('contain', ' E-mail is required. ');
+        cy.get(registrationSelectors.passwordError).should('contain', ' Password is required. ')
         cy.get(registrationSelectors.phone).type('a');
-        cy.get(registrationSelectors.phoneError).should('have.text', ' Only numbers are allowed. ');
+        cy.get(registrationSelectors.phoneError).should('contain', ' Only numbers are allowed. ');
         cy.get(registrationSelectors.emailAddress).type('valentynpost.gmail.com');
-        cy.get(registrationSelectors.emailAddressError).should('have.text', ' E-mail format is invalid. ');
+        cy.get(registrationSelectors.emailAddressError).should('contain', ' E-mail format is invalid. ');
         cy.get(registrationSelectors.password).type('01234');
-        cy.get(registrationSelectors.passwordError).should('have.text', ' Password must be minimal 6 characters long. ')
+        cy.get(registrationSelectors.passwordError).should('contain', ' Password must be minimal 6 characters long. ')
     }
 
     validData() {

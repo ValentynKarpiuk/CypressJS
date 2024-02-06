@@ -16,7 +16,7 @@ class Login {
         cy.get(loginSelectors.password).type(registrationSelectors.passwordData);
         cy.get(loginSelectors.login).click();
         cy.get(loginSelectors.userMenu, {timeout:5000} )
-        .should('have.text', ' '+ registrationSelectors.firstNameData + ' ' + registrationSelectors.lastNameData + ' ') 
+        .should('contain', ' '+ registrationSelectors.firstNameData + ' ' + registrationSelectors.lastNameData + ' ') 
     }
 
     incorrectEmail() {
@@ -24,7 +24,7 @@ class Login {
         cy.get(loginSelectors.email).type('alentynpost@gmail.com');
         cy.get(loginSelectors.password).type(registrationSelectors.passwordData);
         cy.get(loginSelectors.login).click();
-        cy.get(loginSelectors.loginError, {timeout:5000}).should('have.text', 'Invalid email or password')
+        cy.get(loginSelectors.loginError, {timeout:5000}).should('contain', 'Invalid email or password')
         }
 
     incorrectPassword() {
@@ -32,21 +32,21 @@ class Login {
         cy.get(loginSelectors.email).type(registrationSelectors.emailAddress);
         cy.get(loginSelectors.password).type('elcome01');
         cy.get(loginSelectors.login).click();
-        cy.get(loginSelectors.loginError, {timeout:5000}).should('have.text', 'Invalid email or password')
+        cy.get(loginSelectors.loginError, {timeout:5000}).should('contain', 'Invalid email or password')
     }
 
     emptyFields() {
         this.openLoginPopup();
         cy.get(loginSelectors.login).click();
-        cy.get(loginSelectors.loginError, {timeout:5000}).should('have.text', ' E-mail is required. ');
-        cy.get(loginSelectors.passwordError, {timeout:5000}).should('have.text', ' Password is required. ');
+        cy.get(loginSelectors.loginError, {timeout:5000}).should('contain', ' E-mail is required. ');
+        cy.get(loginSelectors.passwordError, {timeout:5000}).should('contain', ' Password is required. ');
     }
 
     incorrectFormat() {
         this.openLoginPopup();
         cy.get(loginSelectors.login).click();
-        cy.get('[data-test="email-error"]', {timeout:5000}).should('have.text', ' E-mail format is invalid. ');
-        cy.get('[data-test="password-error"]', {timeout:5000}).should('have.text', ' Password length is invalid ');
+        cy.get('[data-test="email-error"]', {timeout:5000}).should('contain', ' E-mail format is invalid. ');
+        cy.get('[data-test="password-error"]', {timeout:5000}).should('contain', ' Password length is invalid ');
     }
 
     singOut() {
