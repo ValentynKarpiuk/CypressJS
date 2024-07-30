@@ -47,6 +47,9 @@ class Registration {
         cy.get(registrationSelectors.registerButton).click({force:true});
         cy.wait(1000);
 
+            //Some explanation about script below. 
+            //In some time system remove credential of the user, that's way to options could be correct. 
+
             cy.get('body').then($body => {
                 // Checking if "Log in" form is visible
                 if ($body.find(registrationSelectors.loginPopup).length > 0) {
