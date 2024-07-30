@@ -10,7 +10,7 @@ class PasswordRecovery {
         cy.get(registrationSelectors.singInButton).click();
         cy.get(passwordRecoverSelectors.forgotPasswordLink).click();
     }
-
+    
     validData() {
         this.openRecoverPage();
         cy.get(registrationSelectors.emailAddress).type(registrationSelectors.emailData);

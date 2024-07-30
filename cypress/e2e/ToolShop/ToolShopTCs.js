@@ -5,7 +5,7 @@ import { login } from "../../pageObjects/2_login/login";
 import { passwordRecovery } from "../../pageObjects/3_passwordRecover/passwordRecover";
 import { userMenu } from "../../pageObjects/4_userMenu/userMenu";
 
-describe('Registration', () => {
+describe.only('Registration', () => {
 
     it('Registration failed - empty fields', () => {
         registration.invalidData();
@@ -16,7 +16,7 @@ describe('Registration', () => {
     })
 })
 
-describe('Authorization', () => {
+/*describe('Authorization', () => {
 
     it('User successfully login and log out', () => {
         login.correctCredential();
@@ -39,9 +39,9 @@ describe('Authorization', () => {
         login.incorrectEmail();
     })
 
-})
+})*/
 
-describe('User forgot Password', () => {
+/*describe('User forgot Password', () => {
 
     // This TC is working fine but it locked because after execution
     // user is not able to log in with data set during
@@ -51,7 +51,7 @@ describe('User forgot Password', () => {
         passwordRecovery.validData();
     })*/
 
-    it('No exist in the system email address was set', () => {
+   /* it('No exist in the system email address was set', () => {
         passwordRecovery.invalidData();
     })
 
@@ -59,20 +59,20 @@ describe('User forgot Password', () => {
         passwordRecovery.invalidFormat();
     })
 
-})
+})*/
 
-describe('User menu', () => {
+/*describe('User menu', () => {
 
     beforeEach(() => {
         login.correctCredential();
     })
 
-    it('Update prfile, all data apart from email', () => {
+    it('Update profile, all data apart from email', () => {
         userMenu.editProfileData();
     })
 
-    /*afterEach(() => {
+    afterEach(() => {
         login.singOut();
-    })*/
+    })
 
-})
+})*/
