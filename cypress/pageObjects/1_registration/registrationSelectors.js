@@ -30,13 +30,14 @@ export default {
     emailAddressError: '[data-test="email-error"]',
     passwordError: '[data-test="password-error"]',
     helpBlocker: '[class="help-block"]',
-    invalidFormatText: ' E-mail format is invalid ',
+    // this selector was used before changes: invalidFormatText: ' E-mail format is invalid ',
+    invalidFormatText: '',
 
     //correct data for registration/login
     firstNameData: 'Valentyn',
     lastNameData: 'Ka',
     emailData: 'valentynpost@gmail.com',
-    passwordData: 'welcome01',
+    passwordData: 'Wlcome01!',
     
     // invalid data for error pop-up
     invalidEmailData: 'alentynpost@gmail.com',

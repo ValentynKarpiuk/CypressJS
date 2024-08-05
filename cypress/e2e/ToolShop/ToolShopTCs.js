@@ -5,9 +5,9 @@ import { login } from "../../pageObjects/2_login/login";
 import { passwordRecovery } from "../../pageObjects/3_passwordRecover/passwordRecover";
 import { userMenu } from "../../pageObjects/4_userMenu/userMenu";
 
-describe.only('Registration', () => {
+describe('Registration', () => {
 
-    it('Registration failed - empty fields', () => {
+    it('Registration failed - empty fields, wrong data', () => {
         registration.invalidData();
     });
 
@@ -16,18 +16,18 @@ describe.only('Registration', () => {
     })
 })
 
-/*describe('Authorization', () => {
+describe('Authorization', () => {
 
     it('User successfully login and log out', () => {
         login.correctCredential();
         login.singOut();
     })
 
-    it('Login to the page with incorrect e-mail', () => {
+    it('Login with incorrect e-mail', () => {
         login.incorrectEmail();
     })
 
-    it('Login to the page with incorrect password', () => {
+    it('Login with incorrect password', () => {
         login.incorrectEmail();
     })
 
@@ -39,9 +39,9 @@ describe.only('Registration', () => {
         login.incorrectEmail();
     })
 
-})*/
+})
 
-/*describe('User forgot Password', () => {
+describe('User forgot Password', () => {
 
     // This TC is working fine but it locked because after execution
     // user is not able to log in with data set during
@@ -51,7 +51,7 @@ describe.only('Registration', () => {
         passwordRecovery.validData();
     })*/
 
-   /* it('No exist in the system email address was set', () => {
+    it('No exist in the system email address was set', () => {
         passwordRecovery.invalidData();
     })
 
@@ -59,7 +59,7 @@ describe.only('Registration', () => {
         passwordRecovery.invalidFormat();
     })
 
-})*/
+})
 
 /*describe('User menu', () => {
 

@@ -45,13 +45,13 @@ class Login {
     incorrectFormat() {
         this.openLoginPopup();
         cy.get(loginSelectors.login).click();
-        cy.get('[data-test="email-error"]', {timeout:5000}).should('contain', ' E-mail format is invalid. ');
-        cy.get('[data-test="password-error"]', {timeout:5000}).should('contain', ' Password length is invalid ');
+        cy.get(loginSelectors.emailError, {timeout:5000}).should('contain', ' E-mail format is invalid. ');
+        cy.get(loginSelectors.passwordError, {timeout:5000}).should('contain', ' Password length is invalid ');
     }
 
     singOut() {
-        cy.get('[id="user-menu"]', {timeout:5000}).click();
-        cy.get('[data-test="nav-sign-out"]').click({force:true})
+        cy.get(loginSelectors.userMenu, {timeout:5000}).click();
+        cy.get(loginSelectors.logOut).click({force:true})
         cy.get(registrationSelectors.loginPopup, {timeout:5000}).should('be.visible')
     }
 }
