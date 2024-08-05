@@ -45,8 +45,10 @@ class Login {
     incorrectFormat() {
         this.openLoginPopup();
         cy.get(loginSelectors.login).click();
-        cy.get(loginSelectors.emailError, {timeout:5000}).should('contain', ' E-mail format is invalid. ');
-        cy.get(loginSelectors.passwordError, {timeout:5000}).should('contain', ' Password length is invalid ');
+        cy.get(loginSelectors.email).type('valentynpost.gmail.com'); 
+        cy.get(loginSelectors.password).type('ab')
+        cy.get(loginSelectors.emailError, {timeout:5000}).should('contain', 'Email format is invalid');
+        cy.get(loginSelectors.passwordError, {timeout:5000}).should('contain', 'Password length is invalid');
     }
 
     singOut() {

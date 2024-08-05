@@ -36,7 +36,7 @@ describe('Authorization', () => {
     })
 
     it('Login to the page with incorrect format of email and incorrect length of the password', () => {
-        login.incorrectEmail();
+        login.incorrectFormat();
     })
 
 })
