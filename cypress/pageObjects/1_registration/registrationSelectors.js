@@ -31,7 +31,7 @@ export default {
     passwordError: '[data-test="password-error"]',
     helpBlocker: '[class="help-block"]',
     // this selector was used before changes: invalidFormatText: ' E-mail format is invalid ',
-    invalidFormatText: '',
+    invalidFormatText: 'The selected email is invalid.',
 
     //correct data for registration/login
     firstNameData: 'Valentyn',

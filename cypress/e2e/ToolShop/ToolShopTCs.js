@@ -43,9 +43,10 @@ describe('Authorization', () => {
 
 describe('User forgot Password', () => {
 
-    // This TC is working fine but it locked because after execution
-    // user is not able to log in with data set during
-    // successful registration
+//Last check confirm, that this feature doesn't work in expected behavior. 
+//User set correct email, but doesn't receive any info to the mail, 
+//Also no information about result after setting correct mail and click "Set New Password"
+//As a result user is not able to login with previous data and doesn't know how continue 
     
     /*it('Password successfully recovered', () => {
         passwordRecovery.validData();

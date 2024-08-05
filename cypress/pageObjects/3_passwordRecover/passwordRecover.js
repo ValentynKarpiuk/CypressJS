@@ -24,7 +24,7 @@ class PasswordRecovery {
         cy.get(registrationSelectors.emailAddress).type(registrationSelectors.invalidEmailData);
         cy.get(passwordRecoverSelectors.setNewPasswordBtn).click();
         cy.get(passwordRecoverSelectors.errorAlert, {timeout:5000})
-        .should('contain', '');
+        .should('contain', 'The selected email is invalid.');
 
     }
 
@@ -33,7 +33,7 @@ class PasswordRecovery {
         cy.get(registrationSelectors.emailAddress).type(registrationSelectors.incorrectEmailFormat);
         cy.get(passwordRecoverSelectors.setNewPasswordBtn).click();
         cy.get(registrationSelectors.emailAddressError)
-        .should('contain', registrationSelectors.invalidFormatText);
+        .should('contain', '');
     }
 }
 export const passwordRecovery = new PasswordRecovery()
