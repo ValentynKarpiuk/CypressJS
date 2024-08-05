@@ -62,7 +62,7 @@ describe('User forgot Password', () => {
 
 })
 
-/*describe('User menu', () => {
+describe.only('User menu', () => {
 
     beforeEach(() => {
         login.correctCredential();
@@ -72,8 +72,8 @@ describe('User forgot Password', () => {
         userMenu.editProfileData();
     })
 
-    afterEach(() => {
+    /*afterEach(() => {
         login.singOut();
-    })
+    })*/
 
-})*/
+})

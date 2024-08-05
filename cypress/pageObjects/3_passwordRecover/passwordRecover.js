@@ -13,7 +13,7 @@ class PasswordRecovery {
     
     validData() {
         this.openRecoverPage();
-        cy.get(registrationSelectors.emailAddress).type(registrationSelectors.emailData);
+        cy.get(registrationSelectors.emailAddress).type(registrationSelectors.emailData); 
         cy.get(passwordRecoverSelectors.setNewPasswordBtn).click();
         cy.get(passwordRecoverSelectors.alert)
         .should('contain', ' Your password is successfully updated! ')
@@ -21,7 +21,7 @@ class PasswordRecovery {
 
     invalidData() {
         this.openRecoverPage();
-        cy.get(registrationSelectors.emailAddress).type(registrationSelectors.invalidEmailData);
+        cy.get(registrationSelectors.emailAddress).type(registrationSelectors.invalidEmailData); //'alentynpost@gmail.com'
         cy.get(passwordRecoverSelectors.setNewPasswordBtn).click();
         cy.get(passwordRecoverSelectors.errorAlert, {timeout:5000})
         .should('contain', 'The selected email is invalid.');
@@ -30,7 +30,7 @@ class PasswordRecovery {
 
     invalidFormat() {
         this.openRecoverPage();
-        cy.get(registrationSelectors.emailAddress).type(registrationSelectors.incorrectEmailFormat);
+        cy.get(registrationSelectors.emailAddress).type(registrationSelectors.incorrectEmailFormat); // 'valentynpost.gmail.com'
         cy.get(passwordRecoverSelectors.setNewPasswordBtn).click();
         cy.get(registrationSelectors.emailAddressError)
         .should('contain', '');
