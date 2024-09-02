@@ -1,7 +1,7 @@
 export default {
 
 email: '[id="email"]',
-password: '[id="password"]',
+password: '[data-test="password"]',
 login: '[class="btnSubmit"]',
 userMenu: '[id="menu"]',
 loginError: '[data-test="login-error"]',

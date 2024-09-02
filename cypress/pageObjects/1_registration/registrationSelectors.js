@@ -12,7 +12,7 @@ export default {
     selectCountry: '[id="country"]', // select
     phone: '[id="phone"]', 
     emailAddress: '[id="email"]',
-    password: '[id="password"]',
+    password: '[data-test="password"]',
     registerButton: '[class="btnSubmit mb-3"]',
     loginPopup: '[class="col-lg-6 auth-form"]',
     registrationForm: '[class="col-lg-8 auth-form"]',

@@ -4,6 +4,7 @@ import { registration } from "../../pageObjects/1_registration/registration"
 import { login } from "../../pageObjects/2_login/login";  
 import { passwordRecovery } from "../../pageObjects/3_passwordRecover/passwordRecover";
 import { userMenu } from "../../pageObjects/4_userMenu/userMenu";
+import { contact } from "../../pageObjects/5_contact/contact";
 
 describe('Registration', () => {
 
@@ -18,7 +19,7 @@ describe('Registration', () => {
 
 describe('Authorization', () => {
 
-    it('User successfully login and log out', () => {
+    it('User successfully logs in and logs out', () => {
         login.correctCredential();
         login.singOut();
     })
@@ -62,7 +63,7 @@ describe('User forgot Password', () => {
 
 })
 
-describe.only('User menu', () => {
+describe('User menu', () => {
 
     beforeEach(() => {
         login.correctCredential();
@@ -72,8 +73,25 @@ describe.only('User menu', () => {
         userMenu.editProfileData();
     })
 
-    /*afterEach(() => {
+    afterEach(() => {
         login.singOut();
-    })*/
+    })
+
+})
+
+describe.only('Contact page', () => {
+    
+    beforeEach(() => {
+        registration.validData();
+        login.correctCredential();
+    })
+
+    it('Check all topics: Payments with txt file and size 0 kb', () => {
+
+        //contact.attachmentIncorrect();
+        contact.paymentQuestion();
+
+    })
+    
 
 })
