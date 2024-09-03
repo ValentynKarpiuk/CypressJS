@@ -5,6 +5,7 @@ import { login } from "../../pageObjects/2_login/login";
 import { passwordRecovery } from "../../pageObjects/3_passwordRecover/passwordRecover";
 import { userMenu } from "../../pageObjects/4_userMenu/userMenu";
 import { contact } from "../../pageObjects/5_contact/contact";
+import { sorting } from "../../pageObjects/6_homePageSorting/sorting";
 
 describe('Registration', () => {
 
@@ -79,7 +80,7 @@ describe('User menu', () => {
 
 })
 
-describe.only('Contact page', () => {
+describe('Contact page', () => {
     
     beforeEach(() => {
         registration.validData();
@@ -90,8 +91,19 @@ describe.only('Contact page', () => {
 
         //contact.attachmentIncorrect();
         contact.paymentQuestion();
-
     })
     
+})
 
+describe('Home page sorting: drop-down menu ', () => {
+
+    it('Sorting by name ascending', () => {
+        sorting.byNameAsc();
+    })
+
+    it('Sorting by price ascending', () => {
+        sorting.byPriceAsc();
+    })
+
+    
 })
