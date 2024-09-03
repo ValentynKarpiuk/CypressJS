@@ -95,7 +95,7 @@ describe('Contact page', () => {
     
 })
 
-describe('Home page sorting: drop-down menu ', () => {
+describe.only('Home page sorting: drop-down menu ', () => {
 
     it('Sorting by name ascending', () => {
         sorting.byNameAsc();

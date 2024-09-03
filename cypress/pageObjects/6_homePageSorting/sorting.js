@@ -7,7 +7,7 @@ class Sorting {
 
         cy.visit('/');
         cy.get(sortingSelectors.selectOption).select('name,asc').should('have.value','name,asc');
-        cy.wait(1500)
+        cy.wait(2000)
        
         cy.get(sortingSelectors.productName).eq(0).invoke('text').then((text) => {
             expect(text.trim(),).to.match(/^[A]/)
