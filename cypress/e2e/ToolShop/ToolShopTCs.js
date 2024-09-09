@@ -6,6 +6,7 @@ import { passwordRecovery } from "../../pageObjects/3_passwordRecover/passwordRe
 import { userMenu } from "../../pageObjects/4_userMenu/userMenu";
 import { contact } from "../../pageObjects/5_contact/contact";
 import { sorting } from "../../pageObjects/6_homePageSorting/sorting";
+import { priceRange } from "../../pageObjects/7_priceRange/priceRange";
 
 describe('Registration', () => {
 
@@ -95,7 +96,7 @@ describe('Contact page', () => {
     
 })
 
-describe.only('Home page sorting: drop-down menu ', () => {
+describe('Home page sorting: drop-down menu ', () => {
 
     it('Sorting by name ascending', () => {
         sorting.byNameAsc();
@@ -104,6 +105,15 @@ describe.only('Home page sorting: drop-down menu ', () => {
     it('Sorting by price ascending', () => {
         sorting.byPriceAsc();
     })
-
     
+})
+
+describe('Home page: slider price range', () => {
+
+    it('Range by price from 4 to 10', () => {
+
+        priceRange.between1and5()
+
+    })
+
 })
