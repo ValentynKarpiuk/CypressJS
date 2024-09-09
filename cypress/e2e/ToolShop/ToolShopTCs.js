@@ -5,8 +5,9 @@ import { login } from "../../pageObjects/2_login/login";
 import { passwordRecovery } from "../../pageObjects/3_passwordRecover/passwordRecover";
 import { userMenu } from "../../pageObjects/4_userMenu/userMenu";
 import { contact } from "../../pageObjects/5_contact/contact";
-import { sorting } from "../../pageObjects/6_homePageSorting/sorting";
+import { sorting } from "../../pageObjects/6_sorting/sorting";
 import { priceRange } from "../../pageObjects/7_priceRange/priceRange";
+import { byCategory } from "../../pageObjects/8_filteringByCategory/byCategory";
 
 describe('Registration', () => {
 
@@ -117,3 +118,13 @@ describe('Home page: slider price range', () => {
     })
 
 })
+
+describe.only('Filtering by category of the product', () => {
+
+    it('filtering by category of the product', () => {
+
+        byCategory.hammer()
+
+    })
+
+ })

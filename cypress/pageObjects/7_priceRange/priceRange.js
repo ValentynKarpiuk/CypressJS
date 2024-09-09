@@ -1,4 +1,4 @@
-import sortingSelectors from "../6_homePageSorting/sortingSelectors";
+import sortingSelectors from "../6_sorting/sortingSelectors";
 import priceRangeSelectors from "./priceRangeSelectors";
 
 class PriceRange {
@@ -39,9 +39,6 @@ class PriceRange {
 
         cy.wait(3000)
 
-        
-
-
         // Pętla, która będzie działać, dopóki elementy istnieją
         cy.get(sortingSelectors.productPrice).each(($currentElement) => {
             // Pobieramy tekst wartości z elementu
@@ -52,8 +49,8 @@ class PriceRange {
                     // Usuwamy symbol dolara, jeśli istnieje, i konwertujemy na liczbę
                     const currentValue = parseFloat(trimmedText.replace('$', ''));
                     // Sprawdzamy, czy wartość mieści się w zakresie [4, 10]
-                    expect(currentValue, {timeout:1000}).to.be.gte(4);  // Asercja: wartość >= 4
-                    expect(currentValue, {timeout: 1000}).to.be.lte(10);  // Asercja: wartość <= 10
+                    expect(currentValue, { timeout: 1000 }).to.be.gte(4);  // Asercja: wartość >= 4
+                    expect(currentValue, { timeout: 1000 }).to.be.lte(10);  // Asercja: wartość <= 10
                 } else {
                     // Logujemy błąd, jeśli currentValueText nie jest ciągiem tekstowym
                     cy.log(`Oczekiwano tekstu, ale otrzymano: ${currentValueText}`);
@@ -64,8 +61,6 @@ class PriceRange {
     }
 }
 export const priceRange = new PriceRange
-
-
 
 /* Variant 1 //only interact with ui without changing value and don't effect to filtering
 cy.get(sortingSelectors.selectOption).select('price,asc').should('have.value','price,asc');
